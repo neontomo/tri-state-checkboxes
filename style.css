@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #333;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  height: 20px;
+  width: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.checkbox-group:hover .checkbox {
+  opacity: 1;
+}
+
+.checkbox::after,
+[class='checkbox half']::after,
+[class='checkbox full']::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+}
+
+[class='checkbox half']::after {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 50%,
+    transparent 50%
+  );
+}
+
+[class='checkbox full']::after {
+  background: var(--primary-color);
+}
